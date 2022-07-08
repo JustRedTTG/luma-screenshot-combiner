@@ -80,12 +80,12 @@ print('\n')
 for file in files:
     while threads >= maxthreads: pass
     threading.Thread(target=delete_file, args=(file,)).start()
-    print(f'\r deleted: {done}/{len(files)}, threads: {threads}', end='')
+    print(f'\rDeleted: {done}/{len(files)}, threads: {threads}', end='')
 
 for ftp in free_slots:
     ftp.close()
 
-print('You can disconnect the ftp now')
+print('\nYou can disconnect the ftp now')
 os.chdir(f'{os.getcwd()}/../')
 if not os.path.exists('combined'): os.mkdir('combined')
 
