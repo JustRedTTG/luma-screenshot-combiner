@@ -76,7 +76,7 @@ for file in files:
     threading.Thread(target=get_file, args=(file,)).start()
     print(f'\r got: {done}/{len(files)}, threads: {threads}', end='')
 print('\n')
-
+done = 0
 for file in files:
     while threads >= maxthreads: pass
     threading.Thread(target=delete_file, args=(file,)).start()
